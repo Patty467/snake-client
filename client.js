@@ -9,6 +9,11 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
+  
+  conn.on("connect", () => {
+    console.log("Connection Established");
+    conn.write("Name: PJA");
+  });
 
   conn.on("data", (stream) => {
     console.log(`message: ${stream}`)
@@ -18,5 +23,5 @@ const connect = function () {
 };
 
 module.exports = {
-  connect
+  connect,
 };
