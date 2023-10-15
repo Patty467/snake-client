@@ -13,6 +13,7 @@ const connect = function () {
   conn.on("connect", () => {
     console.log("Connection Established");
     conn.write("Name: PJA");
+    // conn.write("Move: up");
   });
 
   conn.on("data", (stream) => {
