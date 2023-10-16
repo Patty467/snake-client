@@ -3,7 +3,7 @@ const { stringConversion } = require("./constants");
 let connection;
 
 //sets the conditions to connect with the server
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -11,8 +11,8 @@ const setupInput = function (conn) {
   stdin.resume();
 
   //converts user input into strings the server can use to trigger game functions
-  const handleUserInput = function (key) {
-    output = stringConversion[key];
+  const handleUserInput = function(key) {
+    let output = stringConversion[key];
     connection.write(output);
   };
 
